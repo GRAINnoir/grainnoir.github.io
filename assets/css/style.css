@@ -1,0 +1,257 @@
+@charset "UTF-8";
+
+@font-face {font-family: 'Source Code';src: url('../webfonts/SourceCodePro-Regular.otf');}
+@font-face {font-family: 'Source Code Light';src: url('../webfonts/SourceCodePro-Light.otf');}
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+/* line 7, ../../_src/scss/__reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 26, ../../_src/scss/__reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  font-family:  Source Code, Georgia, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  background-color: #fff;
+  color: #3126f5;
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  font: 16em/1 Source Code;
+
+  opacity:1;  /* make things invisible upon start */
+ -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+ -moz-animation:fadeIn ease-in 1;
+ animation:fadeIn ease-in 1;
+ 
+ -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+ -moz-animation-fill-mode:forwards;
+ animation-fill-mode:forwards;
+ 
+ -webkit-animation-duration:0.6s;
+ -moz-animation-duration:0.6s;
+ animation-duration:0.6s;
+}
+
+a{
+  outline: none;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+::-moz-selection { /*@bugfix mozilla*/
+    background: rgba(255,255,255,0); /* REMPLACER PAR LA COULEUR DÉSIRÉE*/
+}
+::selection { /* effet souris  */
+    background: rgba(255,255,255,0); /* REMPLACER PAR LA COULEUR DÉSIRÉE*/
+}
+
+.wrapper {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+}
+
+canvas { 
+  width: 100%;
+  height: 100%;
+}
+
+.nav {
+    width: 10px;
+    height: 200px;
+    margin: 0 auto;
+    position: fixed;
+    top: 35%;
+    float: left;
+    z-index: 999;
+}
+
+.nav li {
+    display: block;
+    width: 10px;
+    height: 10px;
+    //background-color: rgba(0, 0, 0, 1.0);
+    //border-radius: 5px;
+    margin-top: 16px;
+    opacity: 1.0;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.nav li:hover a{
+  color: #3126f5;
+}
+
+.nav li a {
+  display: block;
+  width: 10px;
+  height: 10px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.4);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.content-list {
+  text-align: justify;
+  text-decoration: none;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.content-list li{
+  font-size: 24px;
+  line-height: 60px;
+  font-weight: bold;
+}
+
+
+.text--line {
+  font-size: .25em;
+}
+
+.text--line2 {
+  font-size: .5em;
+}
+
+.text--line3 {
+  font-size: .25em;
+}
+
+svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+.text-copy {
+  fill: none;
+  stroke: #fff;
+  stroke-dasharray: 7% 28%;
+  stroke-width: 1px;
+  -webkit-animation: stroke-offset 30s infinite ease-in-out;
+  animation: stroke-offset 30s infinite ease-in-out;
+}
+.text-copy:nth-child(1) {
+  stroke: #3126f5;
+  stroke-dashoffset: 7%;
+}
+.text-copy:nth-child(2) {
+  stroke: #D61C59;
+  stroke-dashoffset: 14%;
+}
+.text-copy:nth-child(3) {
+  stroke: #c4c4;
+  stroke-dashoffset: 21%;
+}
+.text-copy:nth-child(4) {
+  stroke: #3126f5;
+  stroke-dashoffset: 28%;
+}
+.text-copy:nth-child(5) {
+  stroke: #3126f5;
+  stroke-dashoffset: 35%;
+}
+
+@-webkit-keyframes stroke-offset {
+  50% {
+    stroke-dashoffset: 100%;
+    stroke-dasharray: 0 87.5%;
+  }
+}
+
+@keyframes stroke-offset {
+  50% {
+    stroke-dashoffset: 100%;
+    stroke-dasharray: 0 100;
+  }
+}
+
+.blue {
+  font-weight: bold;
+  color: #3126f5;
+}
+
+.red {
+  font-weight: bold;
+  color: #D61C59;
+}
+
+.project-link{
+  text-decoration: none;
+  color: #000;
+  opacity: 1;
+    -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+
+}
+
+.project-link:hover{
+  color: #3126f5;
+}
+
+/* footer */
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  font-size: 10px;
+  text-align: center;
+  margin: 0 auto;
+  color: #505050;
+}
